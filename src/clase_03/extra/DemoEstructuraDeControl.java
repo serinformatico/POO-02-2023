@@ -1,9 +1,9 @@
-package clase_01.extra;
+package clase_03.extra;
 
 public class DemoEstructuraDeControl {
     public static void main(String[] args) {
-        int numero = 1;
 
+        int numero = 1;
 
         // Estructura condicional ternaria
         boolean esVerdadero = (numero >= 1 || numero <= 10) ? true : false;

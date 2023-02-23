@@ -11,28 +11,30 @@ public class SolucionConsignaDeMesaE1 {
         obtenida en el ejercicio desarrollado en la clase asincrónica.
             boolean esDivisible(int n, int divisor)
     */
-    public static boolean esPrimo(int n) {
-        int divisores = 1;
 
-        for (int i = 2; i <= n; i ++) {
-            if (n % i == 0) {
-                divisores ++;
+    public static boolean esPrimo(int numero) {
+        boolean comprobacion = true;
+
+        for (int divisor = 2; divisor < numero; divisor++) {
+            if (numero % divisor == 0) {
+                comprobacion = false;
             }
         }
 
-        return (divisores == 2);
+        return comprobacion;
     }
-
 
     /* Demostración */
     public static void main(String[] args) {
 
         //Ejercicio 1
         System.out.println("Ejercicio 1:");
-        if (esPrimo(3)) {
-            System.out.println(3 + " es primo");
+        int numero = 4;
+
+        if (esPrimo(numero)) {
+            System.out.println(numero + " es primo");
         } else {
-            System.out.println(3 + " no es primo");
+            System.out.println(numero + " no es primo");
         }
     }
 }
