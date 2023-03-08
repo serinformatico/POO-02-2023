@@ -1,6 +1,6 @@
 package clase_08.extra.herencia.codigo;
 
-import clase_09.calefaccion.codigo.Estufa;
+import clase_09.actividad_en_vivo.calefaccion.codigo.Estufa;
 
 public class Experto {
 
