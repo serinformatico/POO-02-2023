@@ -36,7 +36,7 @@ public class Equipo {
     }
 
     public int obtenerCantidadDeJugadoresPorPosicion(String posicion) throws PosicionInexistenteException {
-        int cantidadDeJugadores      = 0;
+        int cantidadDeJugadores = 0;
 
         if (!Equipo.posiciones.contains(posicion)) {
             throw new PosicionInexistenteException();

@@ -1,4 +1,4 @@
-package clase_21_composite.extra.composite.componentes;
+package clase_22_combinacion_de_patrones.extra.combinacion_de_patrones.componentes;
 
 public class Circulo implements Grafico {
 

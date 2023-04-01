@@ -1,38 +1,40 @@
-package clase_21_composite.extra.composite;
+package clase_22_combinacion_de_patrones.extra.combinacion_de_patrones;
 
-import clase_21_composite.extra.composite.componentes.*;
+import clase_22_combinacion_de_patrones.extra.combinacion_de_patrones.componentes.*;
 
 public class DemoLienzo {
     public static void main(String[] args) {
 
-        System.out.println("\nLinea1:");
-        Linea linea1 = new Linea();
-        linea1.setLargo(10);
-        linea1.setGrosor(1);
-        linea1.graficar();
-        linea1.colorear("RAMDON");
+        GraficoFactoryMethodSingleton fabrica = GraficoFactoryMethodSingleton.obtenerInstancia();
 
-        System.out.println("\nclase_20_es_22.actividad_de_mesa.figuras.Circulo:");
-        Circulo circulo = new Circulo();
+        System.out.println("\nCirculo:");
+        Circulo circulo = (Circulo) fabrica.crearGrafico("Circulo");
         circulo.setRadio(15);
         circulo.graficar();
-        circulo.colorear("RAMDON");
+        circulo.colorear("BLANCO");
+
+        System.out.println("\nLínea:");
+        Linea linea = (Linea) fabrica.crearGrafico("Linea");
+        linea.setLargo(10);
+        linea.setGrosor(1);
+        linea.graficar();
+        linea.colorear("MARRON");
 
         System.out.println("\nBocha de Helado:");
-        Circulo bochaDeHelado = new Circulo();
+        Circulo bochaDeHelado = (Circulo) fabrica.crearGrafico("Circulo");
         bochaDeHelado.setRadio(3);
         bochaDeHelado.graficar();
         bochaDeHelado.colorear("BLANCO");
 
         System.out.println("\nCucurucho:");
-        Triangulo cucurucho = new Triangulo();
+        Triangulo cucurucho = (Triangulo) fabrica.crearGrafico("Triangulo");
         cucurucho.setAltura(10);
         cucurucho.setBase(3);
         cucurucho.graficar();
         cucurucho.colorear("MARRON");
 
         System.out.println("\nHelado de una bocha de sabor americana:");
-        FiguraComposite heladoDeUnaBochaAmericana = new FiguraComposite();
+        GraficoComposite heladoDeUnaBochaAmericana = new GraficoComposite();
         heladoDeUnaBochaAmericana.agregarGrafico(cucurucho);
         heladoDeUnaBochaAmericana.agregarGrafico(bochaDeHelado);
         heladoDeUnaBochaAmericana.graficar();
@@ -40,7 +42,7 @@ public class DemoLienzo {
         Lienzo lienzo = new Lienzo();
 
         lienzo.agregarGrafico(heladoDeUnaBochaAmericana);
-        lienzo.agregarGrafico(linea1);
+        lienzo.agregarGrafico(linea);
         lienzo.agregarGrafico(circulo);
     }
 }

@@ -1,6 +1,6 @@
-package clase_21_composite.extra.composite;
+package clase_22_combinacion_de_patrones.extra.combinacion_de_patrones;
 
-import clase_21_composite.extra.composite.componentes.Grafico;
+import clase_22_combinacion_de_patrones.extra.combinacion_de_patrones.componentes.Grafico;
 
 import java.util.ArrayList;
 

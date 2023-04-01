@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-public class FiguraComposite implements Grafico {
+public class GraficoComposite implements Grafico {
 
     // Atributo privado
     private ArrayList<Grafico> graficos = new ArrayList();

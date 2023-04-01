@@ -1,23 +1,31 @@
 package clase_22_combinacion_de_patrones.extra.combinacion_de_patrones;
 
-public class BaseDeDatosSingleton {
+import clase_22_combinacion_de_patrones.extra.combinacion_de_patrones.componentes.*;
+
+public class GraficoFactoryMethodSingleton {
 
     // Atributo estático privado
-    private static BaseDeDatosSingleton instancia = new BaseDeDatosSingleton();
+    private static GraficoFactoryMethodSingleton instancia = new GraficoFactoryMethodSingleton();
 
     // Constructor privado
-    private BaseDeDatosSingleton() { }
+    private GraficoFactoryMethodSingleton() { }
 
-    // Métodos públicos
-    public static BaseDeDatosSingleton obtenerInstancia(){
+    // Método público responsable de retornar la instancia
+    public static GraficoFactoryMethodSingleton obtenerInstancia(){
         return instancia;
     }
 
-    public String abrirConexion(){
-        return "Conexion abierta.";
-    }
+    // Método público responsable de crear objetos
+    public Grafico crearGrafico(String nombreDeLGrafico) {
+        switch (nombreDeLGrafico.toUpperCase()) {
+            case "CIRCULO":
+                return new Circulo();
+            case "LINEA":
+                return new Linea();
+            case "TRIANGULO":
+                return new Triangulo();
+        }
 
-    public String cerrarConexion(){
-        return "Conexion cerrada.";
+        return null;
     }
 }
