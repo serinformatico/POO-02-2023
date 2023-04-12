@@ -1,17 +1,18 @@
-package clase_26_strategy.extra.strategy.luces;
+package clase_26_strategy.extra.strategy.transportes;
 
-public class Taxi implements TransporteStrategy {
+public class Taxi extends TransporteStrategy {
 
-    // Atributo privado
-    private String ruta;
+    public Taxi(String nombre, String destino) {
+        super(nombre, destino);
+    }
 
-    // Método obligatorio
+    // Definición del método obligatorio
     @Override
     public void transportar() {
         System.out.println("\nLlamar a un taxi");
-        System.out.println("\nSubir al taxi");
-        System.out.println("\nViajando al domicilio de destino");
-        System.out.println("\nPagar pasaje");
-        System.out.println("\nBajar del taxi");
+        System.out.println("Subir al taxi");
+        System.out.println("Viajando en " + this.getNombre() + " hasta " + this.getDestino());
+        System.out.println("Pagar pasaje");
+        System.out.println("Bajar del taxi");
     }
 }

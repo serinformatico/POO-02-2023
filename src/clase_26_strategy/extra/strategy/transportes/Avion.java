@@ -1,18 +1,19 @@
-package clase_26_strategy.extra.strategy.luces;
+package clase_26_strategy.extra.strategy.transportes;
 
-public class Avion implements TransporteStrategy {
+public class Avion extends TransporteStrategy {
 
-    // Atributo privado
-    private String ruta;
+    public Avion(String nombre, String destino) {
+        super(nombre, destino);
+    }
 
-    // Método obligatorio
+    // Definición del método obligatorio
     @Override
     public void transportar() {
         System.out.println("\nIr al aeropuerto");
-        System.out.println("\nComprar pasaje");
-        System.out.println("\nHacer checkIn");
-        System.out.println("\nSubir al avión");
-        System.out.println("\nViajando hasta el aeropuerto de destino");
-        System.out.println("\nBajar del avión");
+        System.out.println("Comprar pasaje");
+        System.out.println("Hacer checkIn");
+        System.out.println("Subir al avión");
+        System.out.println("Viajando en " + this.getNombre() + " hasta " + this.getDestino());
+        System.out.println("Bajar del avión");
     }
 }

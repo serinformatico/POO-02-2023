@@ -1,14 +1,24 @@
 package clase_26_strategy.extra.strategy;
 
-public class DemoSemaforo {
+import clase_26_strategy.extra.strategy.transportes.*;
+
+public class DemoTransporte {
     public static void main(String[] args) {
 
-        Semaforo semaforo = new Semaforo();
+        Transporte transporte = new Transporte();
 
-        semaforo.alcanzarLuzVerde();
-        semaforo.alcanzarLuzVerde();
-        semaforo.alcanzarLuzRoja();
-        semaforo.alcanzarLuzRoja();
-        semaforo.alcanzarLuzRoja();
+        // Estrategias de transporte
+        Taxi taxiDH       = new Taxi("DH-Taxi", "Terminal de autobuses");
+        Autobus autobusDH = new Autobus("DH-Autobús", "DH Aeropuerto");
+        Avion avionDH     = new Avion("DH-Avión", "Aeropuerto de destino");
+
+        transporte.setTransporteStrategy(taxiDH);
+        transporte.transportar();
+
+        transporte.setTransporteStrategy(autobusDH);
+        transporte.transportar();
+
+        transporte.setTransporteStrategy(avionDH);
+        transporte.transportar();
     }
 }

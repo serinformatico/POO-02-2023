@@ -1,17 +1,24 @@
-package clase_26_strategy.extra.strategy.transportes;
+package clase_26_strategy.extra.strategy;
 
-public class Autobus implements TransporteStrategy {
+import clase_26_strategy.extra.strategy.transportes.TransporteStrategy;
 
-    // Atributo privado
-    private String ruta;
+public class Transporte {
 
-    // Método obligatorio
-    @Override
+    // Atributo obligatorio
+    private TransporteStrategy transporteStrategy;
+
+    // Método necesario
     public void transportar() {
-        System.out.println("\nIr a la terminal de autobuses");
-        System.out.println("\nComprar pasaje");
-        System.out.println("\nSubir al autobús");
-        System.out.println("\nViajando hasta la terminal de destino");
-        System.out.println("\nBajar del autobús");
+        this.transporteStrategy.transportar();
+    }
+
+    // Getter (opcional)
+    public TransporteStrategy getTransporteStrategy() {
+        return transporteStrategy;
+    }
+
+    // Setter obligatorio
+    public void setTransporteStrategy(TransporteStrategy transporteStrategy) {
+        this.transporteStrategy = transporteStrategy;
     }
 }
